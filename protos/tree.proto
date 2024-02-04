@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+message Uint256 {
+  fixed64 part1 = 1;
+  fixed64 part2 = 2;
+  fixed64 part3 = 3;
+  fixed64 part4 = 4;
+}
+
+message Bytes32 {
+  fixed64 part1 = 1;
+  fixed64 part2 = 2;
+  fixed64 part3 = 3;
+  fixed64 part4 = 4;
+}
+
+message Leaf {
+  Uint256 index = 1;
+  Bytes32 leaf_hash = 2;
+}
+
+message Tree {
+  Bytes32 root = 1;
+  repeated Leaf leaves = 2;
+}
